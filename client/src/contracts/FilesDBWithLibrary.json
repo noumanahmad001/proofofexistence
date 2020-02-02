@@ -1,0 +1,3249 @@
+{
+  "contractName": "FilesDBWithLibrary",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_hash",
+          "type": "string"
+        }
+      ],
+      "name": "addFileForUser",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getFile",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "fileContentHash",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "timestamp",
+          "type": "string"
+        }
+      ],
+      "name": "addFileAsPending",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "fileContentHash",
+          "type": "uint256"
+        }
+      ],
+      "name": "getPendingFileTime",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"fileContentHash\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"timestamp\",\"type\":\"string\"}],\"name\":\"addFileAsPending\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_hash\",\"type\":\"string\"}],\"name\":\"addFileForUser\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getFile\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"fileContentHash\",\"type\":\"uint256\"}],\"name\":\"getPendingFileTime\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{},\"notice\":\"Contract written to interact with library for demo purpose only not using this on front end.\"}},\"settings\":{\"compilationTarget\":{\"/Users/noumanahmad/Documents/Block Chain/ProofOfExistence/contracts/LibraryDemo.sol\":\"FilesDBWithLibrary\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/noumanahmad/Documents/Block Chain/ProofOfExistence/contracts/LibraryDemo.sol\":{\"keccak256\":\"0xc5b1509302e6efd3a8412d69a2c2a37e6c9ea8ce43efbb58b14e128d2ea3fabb\",\"urls\":[\"bzz-raw://bf0c7eccbfa8dc5dc5b54999dc6569a6b4e30fe397438d4cf11d2cd64c0b6173\",\"dweb:/ipfs/QmXoQDXGUz1XqeiSUc9xwLfwSrB5nigZHoHGghTZhtKT5y\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610793806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c8063206ae54a146100515780632fa816921461011657806395256cf914610199578063c1ca5a7b14610254575b600080fd5b6101146004803603604081101561006757600080fd5b81019080803590602001909291908035906020019064010000000081111561008e57600080fd5b8201836020820111156100a057600080fd5b803590602001918460018302840111640100000000831117156100c257600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506102fb565b005b61011e6103dc565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561015e578082015181840152602081019050610143565b50505050905090810190601f16801561018b5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b610252600480360360208110156101af57600080fd5b81019080803590602001906401000000008111156101cc57600080fd5b8201836020820111156101de57600080fd5b8035906020019184600183028401116401000000008311171561020057600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929050505061052c565b005b6102806004803603602081101561026a57600080fd5b8101908080359060200190929190505050610604565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156102c05780820151818401526020810190506102a5565b50505050905090810190601f1680156102ed5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b73__DataStorage___________________________631a2fec30600084846040518463ffffffff1660e01b81526004018084815260200183815260200180602001828103825283818151815260200191508051906020019080838360005b83811015610374578082015181840152602081019050610359565b50505050905090810190601f1680156103a15780820380516001836020036101000a031916815260200191505b5094505050505060006040518083038186803b1580156103c057600080fd5b505af41580156103d4573d6000803e3d6000fd5b505050505050565b606073__DataStorage___________________________631686154d60006040518263ffffffff1660e01b81526004018082815260200191505060006040518083038186803b15801561042e57600080fd5b505af4158015610442573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f82011682018060405250602081101561046c57600080fd5b810190808051604051939291908464010000000082111561048c57600080fd5b838201915060208201858111156104a257600080fd5b82518660018202830111640100000000821117156104bf57600080fd5b8083526020830192505050908051906020019080838360005b838110156104f35780820151818401526020810190506104d8565b50505050905090810190601f1680156105205780820380516001836020036101000a031916815260200191505b50604052505050905090565b73__DataStorage___________________________63678a12726000836040518363ffffffff1660e01b81526004018083815260200180602001828103825283818151815260200191508051906020019080838360005b8381101561059e578082015181840152602081019050610583565b50505050905090810190601f1680156105cb5780820380516001836020036101000a031916815260200191505b50935050505060006040518083038186803b1580156105e957600080fd5b505af41580156105fd573d6000803e3d6000fd5b5050505050565b606073__DataStorage___________________________63eaea72916000846040518363ffffffff1660e01b8152600401808381526020018281526020019250505060006040518083038186803b15801561065e57600080fd5b505af4158015610672573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f82011682018060405250602081101561069c57600080fd5b81019080805160405193929190846401000000008211156106bc57600080fd5b838201915060208201858111156106d257600080fd5b82518660018202830111640100000000821117156106ef57600080fd5b8083526020830192505050908051906020019080838360005b83811015610723578082015181840152602081019050610708565b50505050905090810190601f1680156107505780820380516001836020036101000a031916815260200191505b50604052505050905091905056fea265627a7a723158205d3483664d4728a0fbd13fd2129c3dadacf92ef47c6ecc499404ed43b9cca9e764736f6c634300050c0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c8063206ae54a146100515780632fa816921461011657806395256cf914610199578063c1ca5a7b14610254575b600080fd5b6101146004803603604081101561006757600080fd5b81019080803590602001909291908035906020019064010000000081111561008e57600080fd5b8201836020820111156100a057600080fd5b803590602001918460018302840111640100000000831117156100c257600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506102fb565b005b61011e6103dc565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561015e578082015181840152602081019050610143565b50505050905090810190601f16801561018b5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b610252600480360360208110156101af57600080fd5b81019080803590602001906401000000008111156101cc57600080fd5b8201836020820111156101de57600080fd5b8035906020019184600183028401116401000000008311171561020057600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929050505061052c565b005b6102806004803603602081101561026a57600080fd5b8101908080359060200190929190505050610604565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156102c05780820151818401526020810190506102a5565b50505050905090810190601f1680156102ed5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b73__DataStorage___________________________631a2fec30600084846040518463ffffffff1660e01b81526004018084815260200183815260200180602001828103825283818151815260200191508051906020019080838360005b83811015610374578082015181840152602081019050610359565b50505050905090810190601f1680156103a15780820380516001836020036101000a031916815260200191505b5094505050505060006040518083038186803b1580156103c057600080fd5b505af41580156103d4573d6000803e3d6000fd5b505050505050565b606073__DataStorage___________________________631686154d60006040518263ffffffff1660e01b81526004018082815260200191505060006040518083038186803b15801561042e57600080fd5b505af4158015610442573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f82011682018060405250602081101561046c57600080fd5b810190808051604051939291908464010000000082111561048c57600080fd5b838201915060208201858111156104a257600080fd5b82518660018202830111640100000000821117156104bf57600080fd5b8083526020830192505050908051906020019080838360005b838110156104f35780820151818401526020810190506104d8565b50505050905090810190601f1680156105205780820380516001836020036101000a031916815260200191505b50604052505050905090565b73__DataStorage___________________________63678a12726000836040518363ffffffff1660e01b81526004018083815260200180602001828103825283818151815260200191508051906020019080838360005b8381101561059e578082015181840152602081019050610583565b50505050905090810190601f1680156105cb5780820380516001836020036101000a031916815260200191505b50935050505060006040518083038186803b1580156105e957600080fd5b505af41580156105fd573d6000803e3d6000fd5b5050505050565b606073__DataStorage___________________________63eaea72916000846040518363ffffffff1660e01b8152600401808381526020018281526020019250505060006040518083038186803b15801561065e57600080fd5b505af4158015610672573d6000803e3d6000fd5b505050506040513d6000823e3d601f19601f82011682018060405250602081101561069c57600080fd5b81019080805160405193929190846401000000008211156106bc57600080fd5b838201915060208201858111156106d257600080fd5b82518660018202830111640100000000821117156106ef57600080fd5b8083526020830192505050908051906020019080838360005b83811015610723578082015181840152602081019050610708565b50505050905090810190601f1680156107505780820380516001836020036101000a031916815260200191505b50604052505050905091905056fea265627a7a723158205d3483664d4728a0fbd13fd2129c3dadacf92ef47c6ecc499404ed43b9cca9e764736f6c634300050c0032",
+  "sourceMap": "1353:828:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1353:828:1;;;;;;;",
+  "deployedSourceMap": "1353:828:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1353:828:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1802:167;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1802:167:1;;;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;1802:167:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;1802:167:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;1802:167:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;1802:167:1;;;;;;;;;;;;;;;:::i;:::-;;1639:115;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1639:115:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1469:116;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1469:116:1;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;1469:116:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;1469:116:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;1469:116:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;1469:116:1;;;;;;;;;;;;;;;:::i;:::-;;2009:170;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;2009:170:1;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;2009:170:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1802:167;1892:11;:31;1924:9;1935:15;1952:9;1892:70;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1892:70:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1892:70:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1892:70:1;;;;1802:167;;:::o;1639:115::-;1678:13;1710:11;:26;1737:9;1710:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1710:37:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1710:37:1;;;;;;39:16:-1;36:1;17:17;2:54;1710:37:1;101:4:-1;97:9;90:4;84;80:15;76:31;69:5;65:43;126:6;120:4;113:20;0:138;13:2;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1710:37:1;;;;;;;;;;;;;19:11:-1;14:3;11:20;8:2;;;44:1;41;34:12;8:2;71:11;66:3;62:21;55:28;;123:4;118:3;114:14;159:9;141:16;138:31;135:2;;;182:1;179;172:12;135:2;219:3;213:10;330:9;325:1;311:12;307:20;289:16;285:43;282:58;261:11;247:12;244:29;233:115;230:2;;;361:1;358;351:12;230:2;384:12;379:3;372:25;420:4;415:3;411:14;404:21;;0:432;;1710:37:1;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1710:37:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1703:44;;1639:115;:::o;1469:116::-;1531:11;:29;1561:9;1572:5;1531:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1531:47:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1531:47:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1531:47:1;;;;1469:116;:::o;2009:170::-;2079:13;2111:11;:33;2145:9;2156:15;2111:61;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2111:61:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;2111:61:1;;;;;;39:16:-1;36:1;17:17;2:54;2111:61:1;101:4:-1;97:9;90:4;84;80:15;76:31;69:5;65:43;126:6;120:4;113:20;0:138;13:2;8:3;5:11;2:2;;;29:1;26;19:12;2:2;2111:61:1;;;;;;;;;;;;;19:11:-1;14:3;11:20;8:2;;;44:1;41;34:12;8:2;71:11;66:3;62:21;55:28;;123:4;118:3;114:14;159:9;141:16;138:31;135:2;;;182:1;179;172:12;135:2;219:3;213:10;330:9;325:1;311:12;307:20;289:16;285:43;282:58;261:11;247:12;244:29;233:115;230:2;;;361:1;358;351:12;230:2;384:12;379:3;372:25;420:4;415:3;411:14;404:21;;0:432;;2111:61:1;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;2111:61:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2104:68;;2009:170;;;:::o",
+  "source": "pragma solidity >=0.4.21 <0.7.0;\n\n\n/**\n@title Library for Demo\n@author Nouman Ahmad\n@notice Not using in my contract, only for demo purpose\n */\n\nlibrary DataStorage {\n    // hold its data in the calling contract.\n    // saving user files and pending updates for demo purpose only\n    struct Data { mapping(address => string) userFiles;\n        mapping (uint256 => string) isPendingUpdates; }\n\n    // Note that the first parameter is of type \"storage\n    // reference\" and thus only its storage address\n    function insertFileForUser(Data storage self, string memory _hash)\n        public {\n        self.userFiles[msg.sender] = _hash;\n    }\n\n    // Get the file against user\n    function getFileForUser(Data storage self)\n    public view returns (string memory)\n    {\n        return self.userFiles[msg.sender];\n    }\n\n    // Add file as pending\n    function insertFileAsPending(Data storage self, uint fileContentHash, string memory timestamp)\n        public {\n        self.isPendingUpdates[fileContentHash] = timestamp;\n    }\n\n    // Get file from pending\n    function getTimeForPendingFile(Data storage self, uint fileContentHash )\n    public view returns (string memory)\n    {\n        return self.isPendingUpdates[fileContentHash];\n    }\n\n}\n\n/**\n@notice Contract written to interact with library for demo purpose only\nnot using this on front end.\n */\ncontract FilesDBWithLibrary {\n    DataStorage.Data dataStore ;\n\n    // Add file for user interacts with library\n    function addFileForUser(string memory _hash) public {\n        DataStorage.insertFileForUser(dataStore, _hash);\n    }\n\n    // Get file for user interacts with library\n    function getFile() public view returns(string memory) {\n        return DataStorage.getFileForUser(dataStore);\n    }\n\n    // Add file as pending with timestamp\n    function addFileAsPending(uint fileContentHash, string memory timestamp) public {\n        DataStorage.insertFileAsPending(dataStore, fileContentHash, timestamp);\n    }\n\n    // Get Pending file timestamp\n    function getPendingFileTime(uint fileContentHash) public view returns(string memory) {\n        return DataStorage.getTimeForPendingFile(dataStore, fileContentHash);\n    }\n}\n",
+  "sourcePath": "/Users/noumanahmad/Documents/Block Chain/ProofOfExistence/contracts/LibraryDemo.sol",
+  "ast": {
+    "absolutePath": "/Users/noumanahmad/Documents/Block Chain/ProofOfExistence/contracts/LibraryDemo.sol",
+    "exportedSymbols": {
+      "DataStorage": [
+        367
+      ],
+      "FilesDBWithLibrary": [
+        424
+      ]
+    },
+    "id": 425,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 293,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".21",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": "@title Library for Demo\n@author Nouman Ahmad\n@notice Not using in my contract, only for demo purpose",
+        "fullyImplemented": true,
+        "id": 367,
+        "linearizedBaseContracts": [
+          367
+        ],
+        "name": "DataStorage",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "DataStorage.Data",
+            "id": 302,
+            "members": [
+              {
+                "constant": false,
+                "id": 297,
+                "name": "userFiles",
+                "nodeType": "VariableDeclaration",
+                "scope": 302,
+                "src": "298:36:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_address_$_t_string_storage_$",
+                  "typeString": "mapping(address => string)"
+                },
+                "typeName": {
+                  "id": 296,
+                  "keyType": {
+                    "id": 294,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "306:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "298:26:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_address_$_t_string_storage_$",
+                    "typeString": "mapping(address => string)"
+                  },
+                  "valueType": {
+                    "id": 295,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "317:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 301,
+                "name": "isPendingUpdates",
+                "nodeType": "VariableDeclaration",
+                "scope": 302,
+                "src": "344:44:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
+                  "typeString": "mapping(uint256 => string)"
+                },
+                "typeName": {
+                  "id": 300,
+                  "keyType": {
+                    "id": 298,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "353:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "344:27:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
+                    "typeString": "mapping(uint256 => string)"
+                  },
+                  "valueType": {
+                    "id": 299,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "364:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Data",
+            "nodeType": "StructDefinition",
+            "scope": 367,
+            "src": "284:107:1",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 318,
+              "nodeType": "Block",
+              "src": "588:51:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 316,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 309,
+                          "name": "self",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 304,
+                          "src": "598:4:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                            "typeString": "struct DataStorage.Data storage pointer"
+                          }
+                        },
+                        "id": 313,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "userFiles",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 297,
+                        "src": "598:14:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_string_storage_$",
+                          "typeString": "mapping(address => string storage ref)"
+                        }
+                      },
+                      "id": 314,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 311,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 523,
+                          "src": "613:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 312,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "613:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "598:26:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 315,
+                      "name": "_hash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 306,
+                      "src": "627:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "598:34:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 317,
+                  "nodeType": "ExpressionStatement",
+                  "src": "598:34:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 319,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "insertFileForUser",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 307,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 304,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 319,
+                  "src": "533:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                    "typeString": "struct DataStorage.Data"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 303,
+                    "name": "Data",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 302,
+                    "src": "533:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                      "typeString": "struct DataStorage.Data"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 306,
+                  "name": "_hash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 319,
+                  "src": "552:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 305,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "552:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "532:40:1"
+            },
+            "returnParameters": {
+              "id": 308,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "588:0:1"
+            },
+            "scope": 367,
+            "src": "506:133:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 332,
+              "nodeType": "Block",
+              "src": "765:50:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 326,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 321,
+                        "src": "782:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                          "typeString": "struct DataStorage.Data storage pointer"
+                        }
+                      },
+                      "id": 327,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "userFiles",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 297,
+                      "src": "782:14:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_string_storage_$",
+                        "typeString": "mapping(address => string storage ref)"
+                      }
+                    },
+                    "id": 330,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 328,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 523,
+                        "src": "797:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 329,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "797:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "782:26:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 325,
+                  "id": 331,
+                  "nodeType": "Return",
+                  "src": "775:33:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 333,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getFileForUser",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 322,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 321,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 333,
+                  "src": "702:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                    "typeString": "struct DataStorage.Data"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 320,
+                    "name": "Data",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 302,
+                    "src": "702:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                      "typeString": "struct DataStorage.Data"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "701:19:1"
+            },
+            "returnParameters": {
+              "id": 325,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 324,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 333,
+                  "src": "746:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 323,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "746:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "745:15:1"
+            },
+            "scope": 367,
+            "src": "678:137:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 350,
+              "nodeType": "Block",
+              "src": "958:67:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 348,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 342,
+                          "name": "self",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 335,
+                          "src": "968:4:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                            "typeString": "struct DataStorage.Data storage pointer"
+                          }
+                        },
+                        "id": 345,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "isPendingUpdates",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 301,
+                        "src": "968:21:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
+                          "typeString": "mapping(uint256 => string storage ref)"
+                        }
+                      },
+                      "id": 346,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 344,
+                        "name": "fileContentHash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 337,
+                        "src": "990:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "968:38:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 347,
+                      "name": "timestamp",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 339,
+                      "src": "1009:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "968:50:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 349,
+                  "nodeType": "ExpressionStatement",
+                  "src": "968:50:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 351,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "insertFileAsPending",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 340,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 335,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 351,
+                  "src": "877:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                    "typeString": "struct DataStorage.Data"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 334,
+                    "name": "Data",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 302,
+                    "src": "877:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                      "typeString": "struct DataStorage.Data"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 337,
+                  "name": "fileContentHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 351,
+                  "src": "896:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 336,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "896:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 339,
+                  "name": "timestamp",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 351,
+                  "src": "918:23:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 338,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "918:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "876:66:1"
+            },
+            "returnParameters": {
+              "id": 341,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "958:0:1"
+            },
+            "scope": 367,
+            "src": "848:177:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 365,
+              "nodeType": "Block",
+              "src": "1177:62:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 360,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 353,
+                        "src": "1194:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                          "typeString": "struct DataStorage.Data storage pointer"
+                        }
+                      },
+                      "id": 361,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "isPendingUpdates",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 301,
+                      "src": "1194:21:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
+                        "typeString": "mapping(uint256 => string storage ref)"
+                      }
+                    },
+                    "id": 363,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 362,
+                      "name": "fileContentHash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 355,
+                      "src": "1216:15:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1194:38:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 359,
+                  "id": 364,
+                  "nodeType": "Return",
+                  "src": "1187:45:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 366,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTimeForPendingFile",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 356,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 353,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 366,
+                  "src": "1091:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                    "typeString": "struct DataStorage.Data"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 352,
+                    "name": "Data",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 302,
+                    "src": "1091:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                      "typeString": "struct DataStorage.Data"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 355,
+                  "name": "fileContentHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 366,
+                  "src": "1110:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 354,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1110:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1090:42:1"
+            },
+            "returnParameters": {
+              "id": 359,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 358,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 366,
+                  "src": "1158:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 357,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1158:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1157:15:1"
+            },
+            "scope": 367,
+            "src": "1060:179:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 425,
+        "src": "145:1097:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@notice Contract written to interact with library for demo purpose only\nnot using this on front end.",
+        "fullyImplemented": true,
+        "id": 424,
+        "linearizedBaseContracts": [
+          424
+        ],
+        "name": "FilesDBWithLibrary",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 369,
+            "name": "dataStore",
+            "nodeType": "VariableDeclaration",
+            "scope": 424,
+            "src": "1387:26:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_Data_$302_storage",
+              "typeString": "struct DataStorage.Data"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 368,
+              "name": "DataStorage.Data",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 302,
+              "src": "1387:16:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                "typeString": "struct DataStorage.Data"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 381,
+              "nodeType": "Block",
+              "src": "1521:64:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 377,
+                        "name": "dataStore",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 369,
+                        "src": "1561:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$302_storage",
+                          "typeString": "struct DataStorage.Data storage ref"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 378,
+                        "name": "_hash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 371,
+                        "src": "1572:5:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Data_$302_storage",
+                          "typeString": "struct DataStorage.Data storage ref"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 374,
+                        "name": "DataStorage",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 367,
+                        "src": "1531:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_DataStorage_$367_$",
+                          "typeString": "type(library DataStorage)"
+                        }
+                      },
+                      "id": 376,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "insertFileForUser",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 319,
+                      "src": "1531:29:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_Data_$302_storage_ptr_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (struct DataStorage.Data storage pointer,string memory)"
+                      }
+                    },
+                    "id": 379,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1531:47:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 380,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1531:47:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 382,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addFileForUser",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 372,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 371,
+                  "name": "_hash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 382,
+                  "src": "1493:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 370,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1493:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1492:21:1"
+            },
+            "returnParameters": {
+              "id": 373,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1521:0:1"
+            },
+            "scope": 424,
+            "src": "1469:116:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 392,
+              "nodeType": "Block",
+              "src": "1693:61:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 389,
+                        "name": "dataStore",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 369,
+                        "src": "1737:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$302_storage",
+                          "typeString": "struct DataStorage.Data storage ref"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Data_$302_storage",
+                          "typeString": "struct DataStorage.Data storage ref"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 387,
+                        "name": "DataStorage",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 367,
+                        "src": "1710:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_DataStorage_$367_$",
+                          "typeString": "type(library DataStorage)"
+                        }
+                      },
+                      "id": 388,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getFileForUser",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 333,
+                      "src": "1710:26:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_view$_t_struct$_Data_$302_storage_ptr_$returns$_t_string_memory_ptr_$",
+                        "typeString": "function (struct DataStorage.Data storage pointer) view returns (string memory)"
+                      }
+                    },
+                    "id": 390,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1710:37:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory_ptr",
+                      "typeString": "string memory"
+                    }
+                  },
+                  "functionReturnParameters": 386,
+                  "id": 391,
+                  "nodeType": "Return",
+                  "src": "1703:44:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 393,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getFile",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 383,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1655:2:1"
+            },
+            "returnParameters": {
+              "id": 386,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 385,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 393,
+                  "src": "1678:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 384,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1678:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1677:15:1"
+            },
+            "scope": 424,
+            "src": "1639:115:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 408,
+              "nodeType": "Block",
+              "src": "1882:87:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 403,
+                        "name": "dataStore",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 369,
+                        "src": "1924:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$302_storage",
+                          "typeString": "struct DataStorage.Data storage ref"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 404,
+                        "name": "fileContentHash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 395,
+                        "src": "1935:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 405,
+                        "name": "timestamp",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 397,
+                        "src": "1952:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Data_$302_storage",
+                          "typeString": "struct DataStorage.Data storage ref"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 400,
+                        "name": "DataStorage",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 367,
+                        "src": "1892:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_DataStorage_$367_$",
+                          "typeString": "type(library DataStorage)"
+                        }
+                      },
+                      "id": 402,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "insertFileAsPending",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 351,
+                      "src": "1892:31:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_Data_$302_storage_ptr_$_t_uint256_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (struct DataStorage.Data storage pointer,uint256,string memory)"
+                      }
+                    },
+                    "id": 406,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1892:70:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 407,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1892:70:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 409,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addFileAsPending",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 398,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 395,
+                  "name": "fileContentHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 409,
+                  "src": "1828:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 394,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1828:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 397,
+                  "name": "timestamp",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 409,
+                  "src": "1850:23:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 396,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1850:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1827:47:1"
+            },
+            "returnParameters": {
+              "id": 399,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1882:0:1"
+            },
+            "scope": 424,
+            "src": "1802:167:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 422,
+              "nodeType": "Block",
+              "src": "2094:85:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 418,
+                        "name": "dataStore",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 369,
+                        "src": "2145:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$302_storage",
+                          "typeString": "struct DataStorage.Data storage ref"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 419,
+                        "name": "fileContentHash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 411,
+                        "src": "2156:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Data_$302_storage",
+                          "typeString": "struct DataStorage.Data storage ref"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 416,
+                        "name": "DataStorage",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 367,
+                        "src": "2111:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_DataStorage_$367_$",
+                          "typeString": "type(library DataStorage)"
+                        }
+                      },
+                      "id": 417,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getTimeForPendingFile",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 366,
+                      "src": "2111:33:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_view$_t_struct$_Data_$302_storage_ptr_$_t_uint256_$returns$_t_string_memory_ptr_$",
+                        "typeString": "function (struct DataStorage.Data storage pointer,uint256) view returns (string memory)"
+                      }
+                    },
+                    "id": 420,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2111:61:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory_ptr",
+                      "typeString": "string memory"
+                    }
+                  },
+                  "functionReturnParameters": 415,
+                  "id": 421,
+                  "nodeType": "Return",
+                  "src": "2104:68:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 423,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPendingFileTime",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 412,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 411,
+                  "name": "fileContentHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 423,
+                  "src": "2037:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 410,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2037:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2036:22:1"
+            },
+            "returnParameters": {
+              "id": 415,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 414,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 423,
+                  "src": "2079:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 413,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2079:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2078:15:1"
+            },
+            "scope": 424,
+            "src": "2009:170:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 425,
+        "src": "1353:828:1"
+      }
+    ],
+    "src": "0:2182:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/noumanahmad/Documents/Block Chain/ProofOfExistence/contracts/LibraryDemo.sol",
+    "exportedSymbols": {
+      "DataStorage": [
+        367
+      ],
+      "FilesDBWithLibrary": [
+        424
+      ]
+    },
+    "id": 425,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 293,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".21",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": "@title Library for Demo\n@author Nouman Ahmad\n@notice Not using in my contract, only for demo purpose",
+        "fullyImplemented": true,
+        "id": 367,
+        "linearizedBaseContracts": [
+          367
+        ],
+        "name": "DataStorage",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "DataStorage.Data",
+            "id": 302,
+            "members": [
+              {
+                "constant": false,
+                "id": 297,
+                "name": "userFiles",
+                "nodeType": "VariableDeclaration",
+                "scope": 302,
+                "src": "298:36:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_address_$_t_string_storage_$",
+                  "typeString": "mapping(address => string)"
+                },
+                "typeName": {
+                  "id": 296,
+                  "keyType": {
+                    "id": 294,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "306:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "298:26:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_address_$_t_string_storage_$",
+                    "typeString": "mapping(address => string)"
+                  },
+                  "valueType": {
+                    "id": 295,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "317:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 301,
+                "name": "isPendingUpdates",
+                "nodeType": "VariableDeclaration",
+                "scope": 302,
+                "src": "344:44:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
+                  "typeString": "mapping(uint256 => string)"
+                },
+                "typeName": {
+                  "id": 300,
+                  "keyType": {
+                    "id": 298,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "353:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "344:27:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
+                    "typeString": "mapping(uint256 => string)"
+                  },
+                  "valueType": {
+                    "id": 299,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "364:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Data",
+            "nodeType": "StructDefinition",
+            "scope": 367,
+            "src": "284:107:1",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 318,
+              "nodeType": "Block",
+              "src": "588:51:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 316,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 309,
+                          "name": "self",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 304,
+                          "src": "598:4:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                            "typeString": "struct DataStorage.Data storage pointer"
+                          }
+                        },
+                        "id": 313,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "userFiles",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 297,
+                        "src": "598:14:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_string_storage_$",
+                          "typeString": "mapping(address => string storage ref)"
+                        }
+                      },
+                      "id": 314,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 311,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 523,
+                          "src": "613:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 312,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "613:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "598:26:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 315,
+                      "name": "_hash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 306,
+                      "src": "627:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "598:34:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 317,
+                  "nodeType": "ExpressionStatement",
+                  "src": "598:34:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 319,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "insertFileForUser",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 307,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 304,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 319,
+                  "src": "533:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                    "typeString": "struct DataStorage.Data"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 303,
+                    "name": "Data",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 302,
+                    "src": "533:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                      "typeString": "struct DataStorage.Data"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 306,
+                  "name": "_hash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 319,
+                  "src": "552:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 305,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "552:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "532:40:1"
+            },
+            "returnParameters": {
+              "id": 308,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "588:0:1"
+            },
+            "scope": 367,
+            "src": "506:133:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 332,
+              "nodeType": "Block",
+              "src": "765:50:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 326,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 321,
+                        "src": "782:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                          "typeString": "struct DataStorage.Data storage pointer"
+                        }
+                      },
+                      "id": 327,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "userFiles",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 297,
+                      "src": "782:14:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_string_storage_$",
+                        "typeString": "mapping(address => string storage ref)"
+                      }
+                    },
+                    "id": 330,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 328,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 523,
+                        "src": "797:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 329,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "797:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "782:26:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 325,
+                  "id": 331,
+                  "nodeType": "Return",
+                  "src": "775:33:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 333,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getFileForUser",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 322,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 321,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 333,
+                  "src": "702:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                    "typeString": "struct DataStorage.Data"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 320,
+                    "name": "Data",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 302,
+                    "src": "702:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                      "typeString": "struct DataStorage.Data"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "701:19:1"
+            },
+            "returnParameters": {
+              "id": 325,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 324,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 333,
+                  "src": "746:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 323,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "746:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "745:15:1"
+            },
+            "scope": 367,
+            "src": "678:137:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 350,
+              "nodeType": "Block",
+              "src": "958:67:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 348,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 342,
+                          "name": "self",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 335,
+                          "src": "968:4:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                            "typeString": "struct DataStorage.Data storage pointer"
+                          }
+                        },
+                        "id": 345,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "isPendingUpdates",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 301,
+                        "src": "968:21:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
+                          "typeString": "mapping(uint256 => string storage ref)"
+                        }
+                      },
+                      "id": 346,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 344,
+                        "name": "fileContentHash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 337,
+                        "src": "990:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "968:38:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 347,
+                      "name": "timestamp",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 339,
+                      "src": "1009:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "968:50:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 349,
+                  "nodeType": "ExpressionStatement",
+                  "src": "968:50:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 351,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "insertFileAsPending",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 340,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 335,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 351,
+                  "src": "877:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                    "typeString": "struct DataStorage.Data"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 334,
+                    "name": "Data",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 302,
+                    "src": "877:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                      "typeString": "struct DataStorage.Data"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 337,
+                  "name": "fileContentHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 351,
+                  "src": "896:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 336,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "896:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 339,
+                  "name": "timestamp",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 351,
+                  "src": "918:23:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 338,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "918:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "876:66:1"
+            },
+            "returnParameters": {
+              "id": 341,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "958:0:1"
+            },
+            "scope": 367,
+            "src": "848:177:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 365,
+              "nodeType": "Block",
+              "src": "1177:62:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 360,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 353,
+                        "src": "1194:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                          "typeString": "struct DataStorage.Data storage pointer"
+                        }
+                      },
+                      "id": 361,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "isPendingUpdates",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 301,
+                      "src": "1194:21:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
+                        "typeString": "mapping(uint256 => string storage ref)"
+                      }
+                    },
+                    "id": 363,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 362,
+                      "name": "fileContentHash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 355,
+                      "src": "1216:15:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1194:38:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 359,
+                  "id": 364,
+                  "nodeType": "Return",
+                  "src": "1187:45:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 366,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTimeForPendingFile",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 356,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 353,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 366,
+                  "src": "1091:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                    "typeString": "struct DataStorage.Data"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 352,
+                    "name": "Data",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 302,
+                    "src": "1091:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                      "typeString": "struct DataStorage.Data"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 355,
+                  "name": "fileContentHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 366,
+                  "src": "1110:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 354,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1110:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1090:42:1"
+            },
+            "returnParameters": {
+              "id": 359,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 358,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 366,
+                  "src": "1158:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 357,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1158:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1157:15:1"
+            },
+            "scope": 367,
+            "src": "1060:179:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 425,
+        "src": "145:1097:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@notice Contract written to interact with library for demo purpose only\nnot using this on front end.",
+        "fullyImplemented": true,
+        "id": 424,
+        "linearizedBaseContracts": [
+          424
+        ],
+        "name": "FilesDBWithLibrary",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 369,
+            "name": "dataStore",
+            "nodeType": "VariableDeclaration",
+            "scope": 424,
+            "src": "1387:26:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_Data_$302_storage",
+              "typeString": "struct DataStorage.Data"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 368,
+              "name": "DataStorage.Data",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 302,
+              "src": "1387:16:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Data_$302_storage_ptr",
+                "typeString": "struct DataStorage.Data"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 381,
+              "nodeType": "Block",
+              "src": "1521:64:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 377,
+                        "name": "dataStore",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 369,
+                        "src": "1561:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$302_storage",
+                          "typeString": "struct DataStorage.Data storage ref"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 378,
+                        "name": "_hash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 371,
+                        "src": "1572:5:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Data_$302_storage",
+                          "typeString": "struct DataStorage.Data storage ref"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 374,
+                        "name": "DataStorage",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 367,
+                        "src": "1531:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_DataStorage_$367_$",
+                          "typeString": "type(library DataStorage)"
+                        }
+                      },
+                      "id": 376,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "insertFileForUser",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 319,
+                      "src": "1531:29:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_Data_$302_storage_ptr_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (struct DataStorage.Data storage pointer,string memory)"
+                      }
+                    },
+                    "id": 379,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1531:47:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 380,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1531:47:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 382,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addFileForUser",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 372,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 371,
+                  "name": "_hash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 382,
+                  "src": "1493:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 370,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1493:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1492:21:1"
+            },
+            "returnParameters": {
+              "id": 373,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1521:0:1"
+            },
+            "scope": 424,
+            "src": "1469:116:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 392,
+              "nodeType": "Block",
+              "src": "1693:61:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 389,
+                        "name": "dataStore",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 369,
+                        "src": "1737:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$302_storage",
+                          "typeString": "struct DataStorage.Data storage ref"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Data_$302_storage",
+                          "typeString": "struct DataStorage.Data storage ref"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 387,
+                        "name": "DataStorage",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 367,
+                        "src": "1710:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_DataStorage_$367_$",
+                          "typeString": "type(library DataStorage)"
+                        }
+                      },
+                      "id": 388,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getFileForUser",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 333,
+                      "src": "1710:26:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_view$_t_struct$_Data_$302_storage_ptr_$returns$_t_string_memory_ptr_$",
+                        "typeString": "function (struct DataStorage.Data storage pointer) view returns (string memory)"
+                      }
+                    },
+                    "id": 390,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1710:37:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory_ptr",
+                      "typeString": "string memory"
+                    }
+                  },
+                  "functionReturnParameters": 386,
+                  "id": 391,
+                  "nodeType": "Return",
+                  "src": "1703:44:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 393,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getFile",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 383,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1655:2:1"
+            },
+            "returnParameters": {
+              "id": 386,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 385,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 393,
+                  "src": "1678:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 384,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1678:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1677:15:1"
+            },
+            "scope": 424,
+            "src": "1639:115:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 408,
+              "nodeType": "Block",
+              "src": "1882:87:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 403,
+                        "name": "dataStore",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 369,
+                        "src": "1924:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$302_storage",
+                          "typeString": "struct DataStorage.Data storage ref"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 404,
+                        "name": "fileContentHash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 395,
+                        "src": "1935:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 405,
+                        "name": "timestamp",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 397,
+                        "src": "1952:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Data_$302_storage",
+                          "typeString": "struct DataStorage.Data storage ref"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 400,
+                        "name": "DataStorage",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 367,
+                        "src": "1892:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_DataStorage_$367_$",
+                          "typeString": "type(library DataStorage)"
+                        }
+                      },
+                      "id": 402,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "insertFileAsPending",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 351,
+                      "src": "1892:31:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_struct$_Data_$302_storage_ptr_$_t_uint256_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (struct DataStorage.Data storage pointer,uint256,string memory)"
+                      }
+                    },
+                    "id": 406,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1892:70:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 407,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1892:70:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 409,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addFileAsPending",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 398,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 395,
+                  "name": "fileContentHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 409,
+                  "src": "1828:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 394,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1828:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 397,
+                  "name": "timestamp",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 409,
+                  "src": "1850:23:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 396,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1850:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1827:47:1"
+            },
+            "returnParameters": {
+              "id": 399,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1882:0:1"
+            },
+            "scope": 424,
+            "src": "1802:167:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 422,
+              "nodeType": "Block",
+              "src": "2094:85:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 418,
+                        "name": "dataStore",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 369,
+                        "src": "2145:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$302_storage",
+                          "typeString": "struct DataStorage.Data storage ref"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 419,
+                        "name": "fileContentHash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 411,
+                        "src": "2156:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Data_$302_storage",
+                          "typeString": "struct DataStorage.Data storage ref"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 416,
+                        "name": "DataStorage",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 367,
+                        "src": "2111:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_DataStorage_$367_$",
+                          "typeString": "type(library DataStorage)"
+                        }
+                      },
+                      "id": 417,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getTimeForPendingFile",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 366,
+                      "src": "2111:33:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_view$_t_struct$_Data_$302_storage_ptr_$_t_uint256_$returns$_t_string_memory_ptr_$",
+                        "typeString": "function (struct DataStorage.Data storage pointer,uint256) view returns (string memory)"
+                      }
+                    },
+                    "id": 420,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2111:61:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory_ptr",
+                      "typeString": "string memory"
+                    }
+                  },
+                  "functionReturnParameters": 415,
+                  "id": 421,
+                  "nodeType": "Return",
+                  "src": "2104:68:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 423,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPendingFileTime",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 412,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 411,
+                  "name": "fileContentHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 423,
+                  "src": "2037:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 410,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2037:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2036:22:1"
+            },
+            "returnParameters": {
+              "id": 415,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 414,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 423,
+                  "src": "2079:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 413,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2079:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2078:15:1"
+            },
+            "scope": 424,
+            "src": "2009:170:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 425,
+        "src": "1353:828:1"
+      }
+    ],
+    "src": "0:2182:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.12+commit.7709ece9.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.20",
+  "updatedAt": "2020-02-02T16:04:37.952Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {},
+    "notice": "Contract written to interact with library for demo purpose only not using this on front end."
+  }
+}

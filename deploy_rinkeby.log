@@ -1,0 +1,119 @@
+Noumans-MacBook-Pro:ProofOfExistence noumanahmad$ truffle migrate --reset --network rinkeby
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+Migrations dry-run (simulation)
+===============================
+> Network name:    'rinkeby-fork'
+> Network id:      4
+> Block gas limit: 0x989680
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > block number:        5900293
+   > block timestamp:     1580644460
+   > account:             0xBcd4EB6Dfa69C1449f5BDd841C711929eCE4741A
+   > balance:             11.975769834
+   > gas used:            248741
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00248741 ETH
+
+   -------------------------------------
+   > Total cost:          0.00248741 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'FilesDB'
+   -------------------
+   > block number:        5900295
+   > block timestamp:     1580644468
+   > account:             0xBcd4EB6Dfa69C1449f5BDd841C711929eCE4741A
+   > balance:             11.960075734
+   > gas used:            1542387
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.01542387 ETH
+
+   -------------------------------------
+   > Total cost:          0.01542387 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.01791128 ETH
+
+
+
+
+
+Starting migrations...
+======================
+> Network name:    'rinkeby'
+> Network id:      4
+> Block gas limit: 0x989677
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0xe22e3ee56044342fe7be00e61d998303529d822ccc5046d19f540c83b9b1ef2a
+   > Blocks: 1            Seconds: 17
+   > contract address:    0x7136B13041e89C4B2B7c9858c90f2357b2558be6
+   > block number:        5900295
+   > block timestamp:     1580644502
+   > account:             0xBcd4EB6Dfa69C1449f5BDd841C711929eCE4741A
+   > balance:             11.976004874
+   > gas used:            225237
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00225237 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00225237 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'FilesDB'
+   -------------------
+   > transaction hash:    0x73e10ecb2e07e3a70a047ced3866acff4f98a70da1c7e149dd204d0983714119
+   > Blocks: 1            Seconds: 35
+   > contract address:    0x3668606A37fF7d0d4122696EF23e15D3b597E159
+   > block number:        5900299
+   > block timestamp:     1580644562
+   > account:             0xBcd4EB6Dfa69C1449f5BDd841C711929eCE4741A
+   > balance:             11.962652334
+   > gas used:            1292891
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.01292891 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.01292891 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.01518128 ETH
+
